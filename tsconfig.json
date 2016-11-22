@@ -5,11 +5,12 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "typeRoots": [ "node_modules/@types/" ],
-        "outDir": "bin/",
+        "outDir": "bin/server/",
+        "target": "es5",
         "sourceMap": true
     },
     "include": [
-        "src/**/*"
+        "src/server/main.ts"
     ],
     "exclude": [
         "node_modules",

@@ -4,7 +4,7 @@ import * as express from "express";
 let app = express();
 
 app.get("/", function (req, res) {
-  res.send("<script src=\"myscripts.js\"></script>");
+  res.send("<script src=\"client/bundle.js\"></script>");
 });
 
 app.use(express.static("bin"));
