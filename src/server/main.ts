@@ -3,7 +3,7 @@ import * as express from "express";
 
 let app = express();
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.send("<script src=\"client/bundle.js\"></script>");
 });
 

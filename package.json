@@ -6,7 +6,8 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node bin/server/main.js",
-    "webpack": "webpack --display-error-details"
+    "webpack": "webpack --display-error-details",
+	 "webpack:w": "webpack --watch --display-error-details"
   },
   "repository": {
     "type": "git",

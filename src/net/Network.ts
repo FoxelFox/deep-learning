@@ -1,23 +1,23 @@
-import * as THREE from "three";
+import {RenderPass} from "../processing/RenderPass";
 
 export class Network {
 
-  private net: THREE.WebGLRenderTarget;
+  private net: RenderPass;
 
-  constructor(sizeX: number, sizeY: number) {
-    this.net = new THREE.WebGLRenderTarget(sizeX, sizeY);
-    this.init();
-  }
+	constructor(sizeX: number, sizeY: number) {
+		this.net = new RenderPass(sizeX, sizeY);
+	}
 
-  public update() {
+	public update() {
+		this.net.process();
+	}
 
-  }
+	get Data() {
+		return this.net.Output;
+	}
 
-  get Texture() {
-    return this.net.texture;
-  }
+	public init() {
+		this.net.processOnCanvas();
 
-  private init() {
-    console.log(this.net);
-  }
+	}
 }
