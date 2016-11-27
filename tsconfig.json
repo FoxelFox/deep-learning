@@ -3,10 +3,11 @@
         "module": "commonjs",
         "noImplicitAny": true,
         "removeComments": true,
+        "experimentalDecorators": true,
         "preserveConstEnums": true,
         "typeRoots": [ "node_modules/@types/" ],
         "outDir": "bin/server/",
-        "target": "es5",
+        "target": "es6",
         "sourceMap": true
     },
     "include": [

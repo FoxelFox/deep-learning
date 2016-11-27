@@ -7,7 +7,7 @@
     "prestart": "tsc",
     "start": "node bin/server/main.js",
     "webpack": "webpack --display-error-details",
-	 "webpack:w": "webpack --watch --display-error-details"
+    "webpack:w": "webpack --watch --display-error-details"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,18 @@
   },
   "homepage": "https://github.com/FoxelFox/deep-learning#readme",
   "dependencies": {
+    "@angular/common": "^2.2.3",
+    "@angular/compiler": "^2.2.3",
+    "@angular/core": "^2.2.3",
+    "@angular/platform-browser": "^2.2.3",
+    "@angular/platform-browser-dynamic": "^2.2.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mime": "^1.3.4",
+    "reflect-metadata": "^0.1.8",
     "serve-static": "^1.11.1",
-    "three": "^0.82.1"
+    "three": "^0.82.1",
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "@types/body-parser": "0.0.33",
