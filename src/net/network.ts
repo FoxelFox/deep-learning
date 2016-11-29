@@ -1,4 +1,4 @@
-import {RenderPass} from "../processing/RenderPass";
+import {RenderPass} from "../processing/render-pass";
 
 export class Network {
 
@@ -12,12 +12,11 @@ export class Network {
 		this.net.process();
 	}
 
-	get Data() {
+	get Texture() {
 		return this.net.Output;
 	}
 
 	public init() {
 		this.net.processOnCanvas();
-
 	}
 }

@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import {render} from "./Render";
+import {render} from "./render";
 
 export class RenderPass {
 	private shader: any; // TODO
@@ -23,7 +23,6 @@ export class RenderPass {
 	}
 
 	public process() {
-
 		render.render(this.scene, this.camera, this.target);
 	}
 

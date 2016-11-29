@@ -1,10 +1,11 @@
+
 import {Component} from "@angular/core";
 
 @Component({
 	selector: "app-main",
-	template: "<h1>{{header}}</h1>"
+	template: require("./main.component.html")
 })
-export class AppComponent {
+export class MainComponent {
 
 	private header: string = "Hello Angular 2"
 
