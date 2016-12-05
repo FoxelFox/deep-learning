@@ -6,21 +6,41 @@ import * as THREE from "three";
 	template: require("./texture-viewer.component.html")
 })
 export class TextureViewerComponent implements OnInit {
-	constructor() {
 
+	private quad: THREE.Mesh;
+	private scene: THREE.Scene;
+	private render: THREE.WebGLRenderer;
+	private camera: THREE.Camera;
+	private texture: THREE.Texture;
+
+	constructor() {
 
 	}
 
 	ngOnInit() {
 		const SIZE = 128;
 
-		let scene = new THREE.Scene();
-		let camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
+		this.scene = new THREE.Scene();
+		this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
 
 		let render = new THREE.WebGLRenderer({
 			canvas: <any>document.getElementById("texture")
 		});
 		render.setSize(SIZE, SIZE);
+
+		// create quad
+		let geometry = new THREE.PlaneGeometry( 2, 2);
+		let material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+		this.quad = new THREE.Mesh( geometry, material );
+		//this.quad.position.z = -2;
+		this.scene.add(this.quad);
+
+	}
+
+	update() {
+		requestAnimationFrame(() => {
+			this.render.render(this.scene, this.camera);
+		});
 	}
 
 }
