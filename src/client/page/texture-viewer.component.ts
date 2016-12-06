@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, Input} from "@angular/core";
 import * as THREE from "three";
 
 @Component({
@@ -11,7 +11,7 @@ export class TextureViewerComponent implements OnInit {
 	private scene: THREE.Scene;
 	private render: THREE.WebGLRenderer;
 	private camera: THREE.Camera;
-	private texture: THREE.Texture;
+	@Input() texture: THREE.Texture;
 
 	constructor() {
 

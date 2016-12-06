@@ -5,16 +5,12 @@
         "removeComments": true,
         "experimentalDecorators": true,
         "preserveConstEnums": true,
-        "typeRoots": [ "node_modules/@types/" ],
-        "outDir": "bin/server/",
+        "typeRoots": [ "../node_modules/@types/" ],
         "target": "es6",
         "sourceMap": true
     },
-    "include": [
-        "src/server/main.ts"
-    ],
     "exclude": [
-        "node_modules",
+        ".",
         "**/*.spec.ts"
     ]
 }
