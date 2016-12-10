@@ -3,7 +3,8 @@ import {Component} from "@angular/core";
 
 @Component({
 	selector: "app-main",
-	template: require("./main.component.html")
+	template: "<style>" + require("./main.component.scss") + "</style>" +
+	           require("./main.component.html")
 })
 export class MainComponent {
 

@@ -12,7 +12,8 @@ module.exports = {
 		loaders: [
 			{ test: /\.ts$/, loader: 'ts-loader' },
 			{ test: /\.html$/, loader: 'raw-loader' },
-			{ test: /\.json$/, loader: 'json-loader' }
+			{ test: /\.json$/, loader: 'json-loader' },
+			{ test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"]}
 		]
 	},
 }

@@ -1,0 +1,13 @@
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+$primary: md-palette($md-blue, 700);
+$accent:  md-palette($md-teal, 600, A100, A400);
+$warn:    md-palette($md-red, 600);
+$theme: md-dark-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+
+body {
+	margin: 0;
+	font-family: Roboto, sans-serif;
+}
