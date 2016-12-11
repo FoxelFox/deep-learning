@@ -1,7 +1,5 @@
-import { Injectable } from "@angular/core";
 import {Network} from "../../net/network";
 
-@Injectable()
 export class NetworkService {
 
 	private net: Network;
@@ -14,7 +12,7 @@ export class NetworkService {
 		this.net.update();
 	}
 
-	public get Texture(): THREE.Texture {
+	public getTexture(): THREE.Texture {
 		return this.net.Texture;
 	}
 }

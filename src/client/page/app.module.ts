@@ -10,6 +10,6 @@ import { MaterialModule } from '@angular/material';
 		MainComponent,
 		TextureViewerComponent
 	],
-	bootstrap:    [ MainComponent ]
+	bootstrap:    [ MainComponent ],
 })
 export class AppModule { }

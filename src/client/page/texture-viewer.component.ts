@@ -14,10 +14,12 @@ export class TextureViewerComponent implements OnInit {
 	@Input() texture: THREE.Texture;
 
 	constructor() {
-		console.log(require("./basic.fs"));
 	}
 
 	ngOnInit() {
+
+		console.log(this.texture);
+
 		const SIZE = 128;
 
 		this.scene = new THREE.Scene();
