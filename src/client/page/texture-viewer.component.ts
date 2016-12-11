@@ -14,7 +14,7 @@ export class TextureViewerComponent implements OnInit {
 	@Input() texture: THREE.Texture;
 
 	constructor() {
-
+		console.log(require("./basic.fs"));
 	}
 
 	ngOnInit() {
