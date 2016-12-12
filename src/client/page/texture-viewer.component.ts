@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from "@angular/core";
 import * as THREE from "three";
+import {render} from "../../processing/render";
 
 @Component({
 	selector: "texture-viewer",
@@ -9,7 +10,6 @@ export class TextureViewerComponent implements OnInit {
 
 	private quad: THREE.Mesh;
 	private scene: THREE.Scene;
-	private render: THREE.WebGLRenderer;
 	private camera: THREE.Camera;
 	@Input() texture: THREE.Texture;
 
@@ -23,26 +23,28 @@ export class TextureViewerComponent implements OnInit {
 		const SIZE = 128;
 
 		this.scene = new THREE.Scene();
-		this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 1000);
+		this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, -1, 1);
 
-		let render = new THREE.WebGLRenderer({
-			canvas: <any>document.getElementById("texture")
-		});
 		render.setSize(SIZE, SIZE);
 
 		// create quad
 		let geometry = new THREE.PlaneGeometry( 2, 2);
-		let material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+		//let material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+		let material = new THREE.MeshBasicMaterial( { color: 0xffffff, map: this.texture, side: THREE.DoubleSide} );
 		this.quad = new THREE.Mesh( geometry, material );
 		//this.quad.position.z = -2;
 		this.scene.add(this.quad);
 
+
+		this.update();
 	}
 
 	update() {
 		requestAnimationFrame(() => {
-			this.render.render(this.scene, this.camera);
+			render.render(this.scene, this.camera);
+			this.update();
 		});
+		
 	}
 
 }

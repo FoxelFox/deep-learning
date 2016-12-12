@@ -5,6 +5,7 @@ module.exports = {
   output: {
     filename: 'bin/[name]/bundle.js'
   },
+	devtool: 'source-map',
   resolve: {
 		extensions: ['', 'json', '.ts', '.js', '.html', 'vs', 'fs']
 	},

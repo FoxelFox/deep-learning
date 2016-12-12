@@ -1,7 +1,7 @@
 
 import {Component} from "@angular/core"
 import {NetworkService} from './network.service';
-import { Inject } from "@angular/core";
+import {Inject} from "@angular/core";
 
 @Component({
 	selector: "app-main",

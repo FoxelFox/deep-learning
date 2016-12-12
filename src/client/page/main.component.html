@@ -5,4 +5,7 @@
 	</md-toolbar>
 
 	<texture-viewer [texture]="networkservice.getTexture()"></texture-viewer>
+	<button md-raised-button color="primary" (click)="networkservice.update()" id="disable-toggle">
+      update
+    </button>
 </md-sidenav-layout>
