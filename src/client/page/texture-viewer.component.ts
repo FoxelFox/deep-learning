@@ -1,10 +1,12 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit, Input, Inject} from "@angular/core";
 import * as THREE from "three";
 import {render} from "../../processing/render";
+import {TextureViewerService} from "./texture-viewer.service"
 
 @Component({
 	selector: "texture-viewer",
-	template: require("./texture-viewer.component.html")
+	template: require("./texture-viewer.component.html"),
+	providers: [TextureViewerService]
 })
 export class TextureViewerComponent implements OnInit {
 
@@ -13,12 +15,12 @@ export class TextureViewerComponent implements OnInit {
 	private camera: THREE.Camera;
 	@Input() texture: THREE.Texture;
 
-	constructor() {
-	}
+	constructor(
+		@Inject(TextureViewerService)
+		private textureViewerService: TextureViewerService
+ 	) {}
 
 	ngOnInit() {
-
-		console.log(this.texture);
 
 		const SIZE = 128;
 
@@ -35,8 +37,12 @@ export class TextureViewerComponent implements OnInit {
 		//this.quad.position.z = -2;
 		this.scene.add(this.quad);
 
-
+		this.textureViewerService.add(this);
 		this.update();
+	}
+
+	ngOnDestroy() {
+		this.textureViewerService.remove(this);
 	}
 
 	update() {
