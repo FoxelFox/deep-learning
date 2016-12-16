@@ -1,11 +1,10 @@
-
 <md-sidenav-layout>
 	<md-toolbar color="primary">
 		neuronal networking
 	</md-toolbar>
 
-	<texture-viewer [texture]="networkservice.getTexture()"></texture-viewer>
-	<button md-raised-button color="primary" (click)="networkservice.update()" id="disable-toggle">
+	<texture-viewer [texture]="tex" *ngFor="let tex of networkservice.getTextures();"></texture-viewer>
+	<button md-raised-button color="primary" (click)="networkservice.update()">
       update
     </button>
 </md-sidenav-layout>

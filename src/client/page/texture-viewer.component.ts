@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, Inject} from "@angular/core";
+import {Component, OnInit, Input, Inject, OnDestroy} from "@angular/core";
 import * as THREE from "three";
 import {render} from "../../processing/render";
 import {TextureViewerService} from "./texture-viewer.service"
@@ -8,7 +8,7 @@ import {TextureViewerService} from "./texture-viewer.service"
 	template: require("./texture-viewer.component.html"),
 	providers: [TextureViewerService]
 })
-export class TextureViewerComponent implements OnInit {
+export class TextureViewerComponent implements OnInit , OnDestroy{
 
 	private quad: THREE.Mesh;
 	private scene: THREE.Scene;

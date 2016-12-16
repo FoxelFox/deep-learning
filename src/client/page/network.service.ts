@@ -20,7 +20,7 @@ export class NetworkService {
 		this.net.update();
 	}
 
-	public getTexture(): THREE.Texture {
-		return this.net.Texture;
+	public getTextures(): THREE.Texture[] {
+		return this.net.Textures;
 	}
 }

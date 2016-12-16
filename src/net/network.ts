@@ -2,21 +2,23 @@ import {RenderPass} from "../processing/render-pass";
 
 export class Network {
 
-  private net: RenderPass;
+	private net: RenderPass[] = [];
 
 	constructor(sizeX: number, sizeY: number) {
-		this.net = new RenderPass(sizeX, sizeY);
+		this.net.push(new RenderPass(sizeX, sizeY));
 	}
 
 	public update() {
-		this.net.process();
+		for (let tex of this.net) {
+			tex.process();
+		}
 	}
 
-	get Texture() {
-		return this.net.Output;
-	}
-
-	public init() {
-		this.net.processOnCanvas();
+	get Textures() {
+		let array = [];
+		for (let tex of this.net) {
+			array.push(tex.Output);
+		}
+		return array;
 	}
 }

@@ -1,4 +1,5 @@
 import {TextureViewerComponent} from "./texture-viewer.component";
+import {render} from "../../processing/render"
 
 export class TextureViewerService {
 	private viewers: {[key: number]: TextureViewerComponent} = {};
@@ -9,6 +10,10 @@ export class TextureViewerService {
 
 	public remove(viewer: TextureViewerComponent) {
 		delete this.viewers[viewer.texture.id];
+	}
+
+	public update() {
+		console.log(this.viewers);
 	}
 
 }
