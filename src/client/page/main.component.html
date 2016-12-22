@@ -3,8 +3,11 @@
 		neuronal networking
 	</md-toolbar>
 
-	<texture-viewer [texture]="tex" *ngFor="let tex of networkservice.getTextures();"></texture-viewer>
-	<button md-raised-button color="primary" (click)="networkservice.update()">
+	<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+		<texture-viewer [texture]="tex" *ngFor="let tex of network.getTextures();" style="padding: 8px;"></texture-viewer>
+	</div>
+	
+	<button md-raised-button color="primary" (click)="network.update()">
       update
     </button>
 </md-sidenav-layout>

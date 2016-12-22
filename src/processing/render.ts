@@ -1,2 +1,2 @@
 import * as THREE from "three";
-export const render = new THREE.WebGLRenderer();
+export const render = new THREE.WebGLRenderer({alpha: true});

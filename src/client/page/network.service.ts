@@ -1,6 +1,8 @@
+import {Injectable} from "@angular/core"
 import {Network} from "../../net/network";
 import {render} from "../../processing/render";
 
+//@Injectable()
 export class NetworkService {
 
 	private net: Network;
@@ -12,7 +14,8 @@ export class NetworkService {
 		render.domElement.style.left = "0px";
 		render.domElement.style.width = "100%";
 		render.domElement.style.height = "100%";
-		render.domElement.style.zIndex = "1337";
+		render.domElement.style.zIndex = "1";
+		render.domElement.style.pointerEvents = "none";
 
 	}
 
@@ -24,3 +27,5 @@ export class NetworkService {
 		return this.net.Textures;
 	}
 }
+
+export const network = new NetworkService();

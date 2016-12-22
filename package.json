@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "tsc src/server/main.ts --outDir bin/server",
+    "prestart": "tsc src/server/main.ts --outDir bin/server & webpack",
     "start": "node bin/server/main.js",
     "webpack": "webpack --display-error-details",
     "webpack:w": "webpack --watch --progress --display-error-details"

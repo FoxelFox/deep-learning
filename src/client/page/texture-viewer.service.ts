@@ -1,6 +1,8 @@
+import {Injectable} from "@angular/core"
 import {TextureViewerComponent} from "./texture-viewer.component";
 import {render} from "../../processing/render"
 
+// @Injectable()
 export class TextureViewerService {
 	private viewers: {[key: number]: TextureViewerComponent} = {};
 
@@ -13,7 +15,12 @@ export class TextureViewerService {
 	}
 
 	public update() {
-		console.log(this.viewers);
+		for(let i in this.viewers){
+			this.viewers[i].update();
+		}
 	}
 
 }
+
+
+export const textures = new TextureViewerService();
