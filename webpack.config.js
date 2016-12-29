@@ -15,7 +15,7 @@ module.exports = {
 			{ test: /\.html$/, loader: 'raw-loader' },
 			{ test: /\.json$/, loader: 'json-loader' },
 			{ test: /\.scss$/, loaders: ["style-loader", "css-loader", "sass-loader"]},
-			{ test: /\.(vs|fs)$/, loader: 'shader' }
+			{ test: /\.(glsl)$/, loader: 'shader' }
 
 		]
 	},

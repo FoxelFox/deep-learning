@@ -5,7 +5,7 @@ export class Network {
 	private net: RenderPass[] = [];
 
 	constructor(sizeX: number, sizeY: number) {
-		for (let i = 0; i < 19; ++i) {
+		for (let i = 0; i < 1; ++i) {
 			this.net.push(new RenderPass(sizeX, sizeY));
 		}
 	}

@@ -15,9 +15,12 @@ export class RenderPass {
 
 		// create quad
 		let geometry = new THREE.PlaneGeometry( 2, 2);
-		let material = new THREE.MeshBasicMaterial( {color: "#"+((1<<24)*Math.random()|0).toString(16), side: THREE.DoubleSide} );
+		let material = new THREE.ShaderMaterial({
+			vertexShader: require("./shader/basic.vertex.glsl"),
+			fragmentShader: require("./shader/basic.fragment.glsl")
+		})
 		this.quad = new THREE.Mesh( geometry, material );
-		//this.quad.position.z = -2;
+		
 		this.scene.add(this.quad);
 
 	}
